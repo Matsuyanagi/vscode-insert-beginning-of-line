@@ -11,16 +11,30 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.insertBeginningOfLine"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "extension.insertBeginningOfLine",
+                "title": "Insert a word beginning of line."
             }
         ]
+    },
+    "configuration": {
+        "type": "object",
+        "title": "Insert Beginning of Line",
+        "properties": {
+            "insertBeginningOfLine.defaultHeaderWord": {
+                "type": "string",
+                "default": "> ",
+                "description": "Default header word."
+            }
+        },
+        "default": {
+            "defaultSeparator": "> "
+        }
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
