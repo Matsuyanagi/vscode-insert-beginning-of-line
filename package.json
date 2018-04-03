@@ -10,6 +10,15 @@
     "categories": [
         "Other"
     ],
+    "keywords": [
+        "insert",
+        "beginning",
+        "bol"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Matsuyanagi/vscode-insert-beginning-of-line.git"
+    },
     "activationEvents": [
         "onCommand:extension.insertBeginningOfLine"
     ],
@@ -20,20 +29,20 @@
                 "command": "extension.insertBeginningOfLine",
                 "title": "Insert a word beginning of line."
             }
-        ]
-    },
-    "configuration": {
-        "type": "object",
-        "title": "Insert Beginning of Line",
-        "properties": {
-            "insertBeginningOfLine.defaultHeaderWord": {
-                "type": "string",
-                "default": "> ",
-                "description": "Default header word."
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Insert Beginning of Line",
+            "properties": {
+                "insertBeginningOfLine.defaultInsertWord": {
+                    "type": "string",
+                    "default": "> ",
+                    "description": "Default insert word. \\t:tab, \\n:LF."
+                }
+            },
+            "default": {
+                "defaultInsertWord": "> "
             }
-        },
-        "default": {
-            "defaultSeparator": "> "
         }
     },
     "scripts": {
