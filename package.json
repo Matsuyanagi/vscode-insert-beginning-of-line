@@ -2,7 +2,7 @@
     "name": "vscode-insert-beginning-of-line",
     "displayName": "Insert beginning of line",
     "description": "Insert a word at beginning of the lines.",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "Matsuyanagi",
     "engines": {
         "vscode": "^1.21.0"
