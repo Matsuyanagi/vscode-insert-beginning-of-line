@@ -1,62 +1,69 @@
 {
-    "name": "vscode-insert-beginning-of-line",
-    "displayName": "Insert beginning of line",
-    "description": "Insert a word at beginning of the lines.",
-    "version": "0.0.6",
-    "publisher": "Matsuyanagi",
-    "engines": {
-        "vscode": "^1.21.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "keywords": [
-        "insert",
-        "beginning",
-        "bol"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Matsuyanagi/vscode-insert-beginning-of-line.git"
-    },
-    "activationEvents": [
-        "onCommand:extension.insertBeginningOfLine"
-    ],
-    "main": "./out/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.insertBeginningOfLine",
-                "title": "Insert a word beginning of line."
-            }
-        ],
-        "configuration": {
-            "type": "object",
-            "title": "Insert Beginning of Line",
-            "properties": {
-                "insertBeginningOfLine.defaultInsertWord": {
-                    "type": "string",
-                    "default": "> ",
-                    "description": "Default insert word. \\t:tab, \\n:LF."
-                }
-            },
-            "default": {
-                "defaultInsertWord": "> "
-            }
-        }
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^3.5.1",
-        "vscode": "^1.1.34",
-        "tslint": "^5.17.0",
-        "@types/node": "^12.0.4",
-        "@types/mocha": "^5.2.7"
-    }
+	"name": "vscode-insert-beginning-of-line",
+	"displayName": "Insert beginning of line",
+	"description": "Insert a word at beginning of the lines.",
+	"version": "0.0.7",
+	"publisher": "Matsuyanagi",
+	"engines": {
+		"vscode": "^1.48.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"insert",
+		"beginning",
+		"bol"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Matsuyanagi/vscode-insert-beginning-of-line.git"
+	},
+	"activationEvents": [
+		"onCommand:extension.insertBeginningOfLine"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.insertBeginningOfLine",
+				"title": "Insert a word beginning of line."
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Insert Beginning of Line",
+			"properties": {
+				"insertBeginningOfLine.defaultInsertWord": {
+					"type": "string",
+					"default": "> ",
+					"description": "Default insert word. \\t:tab, \\n:LF."
+				}
+			},
+			"default": {
+				"defaultInsertWord": "> "
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.48.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.0",
+		"@types/node": "^14.0.27",
+		"eslint": "^7.6.0",
+		"@typescript-eslint/eslint-plugin": "^3.8.0",
+		"@typescript-eslint/parser": "^3.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.0.1",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.4.0"
+	}
 }
